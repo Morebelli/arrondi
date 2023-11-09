@@ -1,1 +1,18 @@
+function arrondiPersonnalise(nombreEntier, uniteParametree) {
+    var arrondiInferieur = Math.floor(nombreEntier / uniteParametree) * uniteParametree;
+    var arrondiSuperieur = Math.ceil(nombreEntier / uniteParametree) * uniteParametree;
+
+    // Choisissez l'arrondi en fonction de la proximité par rapport au nombre d'origine
+    var ecartInferieur = nombreEntier - arrondiInferieur;
+    var ecartSuperieur = arrondiSuperieur - nombreEntier;
+
+    return ecartInferieur < ecartSuperieur ? arrondiInferieur : arrondiSuperieur;
+}
+
+var nombreEntier = 17; // Remplacez ceci par votre nombre entier
+var uniteParametree = 10; // Remplacez ceci par l'unité spécifiée
+
+var nombreArrondi = arrondiPersonnalise(nombreEntier, uniteParametree);
+
+console.log(nombreArrondi); // Affichez le résultat
 
